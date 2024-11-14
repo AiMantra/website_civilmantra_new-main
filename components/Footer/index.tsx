@@ -3,24 +3,25 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 // Social media icons and links
 const Socialmedia = [
-    { image: "/images/Footer/fb.png", link: "https://www.facebook.com" },
-    { image: "/images/Footer/insta.svg", link: "https://www.instagram.com" },
+    { image: "/images/Footer/facebook.png", link: "https://www.facebook.com/CivilMantra/" },
+    { image: "/images/Footer/instagram.png", link: "https://www.instagram.com" },
     { image: "/images/Footer/twitter.png", link: "https://www.twitter.com" },
-    { image: "/images/Footer/linkedin.png", link: "https://www.linkedin.com" },
+    { image: "/images/Footer/linkedin.png", link: "https://www.linkedin.com/company/civilmantra-infrastructure-consultant/" },
 ];
 
 // Quick links and services
 const Quicklinks = [
     { page: "Home", url: "/" },
     { page: "About us", url: "/AboutUs" },
-    { page: "Sectors", url: "/" },
+    { page: "Sectors", url: "/Sectors" },
     { page: "Projects", url: "/Projects" },
-    { page: "Achievements", url: "/" },
-    { page: "Innovation", url: "/" },
-    { page: "Career", url: "/" },
+    { page: "Innovation", url: "/Innovation" },
+    { page: "Career", url: "/Career" },
+    { page: "Contact us", url: "/ContactUs" },
 ];
 
 const Services = [
@@ -35,10 +36,19 @@ const Services = [
 ];
 
 const Footer = () => {
+    const [clickCount, setClickCount] = useState(0);
+
+    const handleLogoClick = () => {
+        setClickCount((prevCount: number) => prevCount + 1);
+        if (clickCount + 1 === 5) {
+            window.location.href = "AdminPanel"; 
+        }
+    };
+
     return (
         <>
             <div className="bg-grays ">
-                <div className="max-w-[92vw] mx-auto py-3   flex flex-col max-lg:grid max-lg:grid-cols-2 max-lg:gap-x-4 lg:flex-row lg:justify-between space-y-8 lg:space-y-0 pl-5">
+                <div className="max-w-[88vw] mx-auto pb-3 pt-8   flex flex-col max-lg:grid max-lg:grid-cols-2 max-lg:gap-x-4 lg:flex-row lg:justify-between space-y-8 lg:space-y-0 ">
                     {/* Logo and Address */}
                     <div className="lg:w-1/4 max-lg:mt-9">
                         <Image
@@ -47,6 +57,7 @@ const Footer = () => {
                             height={100}
                             width={100}
                             className="mb-4"
+                            onClick={handleLogoClick}
                         />
                         <motion.div
                             variants={{
@@ -135,28 +146,34 @@ const Footer = () => {
                                 <div className="flex gap-x-2 items-center max-w-full group">
                                     <div className="group">
                                         <Image
-                                            src={"/images/Footer/email_3694289.png"}
+                                            src={"/images/Footer/mail.png"}
                                             alt="Email"
-                                            width={30}
-                                            height={20}
-                                            className="cursor-pointer transition-transform duration-300 ease-in-out group-hover:-translate-y-1 group-hover:scale-125 group-hover:filter group-hover:brightness-0 "
+                                            width={40}
+                                            height={40}
+                                            className="max-md:w-7 max-md:h-7 cursor-pointer transition-transform duration-300 ease-in-out group-hover:-translate-y-1 group-hover:scale-125 group-hover:filter  "
                                         />
                                     </div>
 
-                                    <li className="text-gray-800 overflow-hidden group-hover:text-primary">
-                                        <a href="mailto:services@civilmantra.com" className="max-w-full">
-                                            services@civilmantra.com
+                                    <li className="text-gray-800 overflow-hidden group-hover:text-primary text-lg">
+                                        <a
+                                            href="https://mail.google.com/mail/?view=cm&fs=1&to=services@civilmantra.com"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="max-w-full"
+                                        >
+                                            services@<br className="md:hidden" />civilmantra.com
                                         </a>
                                     </li>
+
                                 </div>
 
                                 <div className="flex gap-x-2 items-center mt-4 group">
                                     <Image
-                                        src={"/images/Footer/phone-call_455705.png"}
+                                        src={"/images/Footer/telephone.png"}
                                         alt="Phone"
-                                        width={30}
+                                        width={40}
                                         height={20}
-                                        className=" cursor-pointer group-hover:-translate-y-1 group-hover:scale-125 transition-transform duration-300 ease-in-out"
+                                        className="max-md:w-7 max-md:h-7 cursor-pointer group-hover:-translate-y-1 group-hover:scale-125 transition-transform duration-300 ease-in-out"
                                     />
                                     <li className="hover:text-gray-100 text-gray-800 group-hover:text-primary text-lg">
                                         <a href="tel:+918120444777">+91 81204 - 44777</a>
@@ -173,16 +190,23 @@ const Footer = () => {
                             whileInView="visible"
                             transition={{ duration: 1, delay: 0 }}
                             viewport={{ once: true }}>
-                            <div className="flex mt-5 gap-x-5">
+                            <div className="flex gap-x-5 max-sm:gap-x-0 max-sm:grid grid-cols-2 mt-5 ">
                                 {Socialmedia.map((social, index) => (
                                     <div key={index}>
                                         <a href={social.link} target="_blank" rel="noopener noreferrer">
                                             <Image
                                                 src={social.image}
                                                 alt="Social Media"
-                                                height={20}
-                                                width={20}
-                                                className=" cursor-pointer w-[35px] p-1 hover:-translate-y-1 hover:scale-125 transition-transform duration-300 ease-in-out"
+                                                height={35}
+                                                width={35}
+                                                className="
+                                                shrink-0
+                                                cursor-pointer
+                                                 p-1
+                                                sm:p-[2px]
+                                                hover:-translate-y-1 hover:scale-125
+                                                transition-transform duration-300 ease-in-out
+                                            "
                                             />
                                         </a>
                                     </div>

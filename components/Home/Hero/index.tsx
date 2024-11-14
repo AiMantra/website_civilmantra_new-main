@@ -73,19 +73,20 @@ const Hero = () => {
                 <meta property="twitter:image" content="/images/civilmantra-twitter.jpg" />
             </Head>
 
-            <div className="relative w-full h-[90vh] top-[-82px]">
+            <div className="mb-10">
+            <div  className="relative w-full h-[88vh] ">
                 {/* Background video */}
                 <video className="absolute top-0 left-0 w-full h-full object-cover -z-10" autoPlay loop muted>
-                    <source src="/videos/Home/bgvideo2.mp4" type="video/mp4" />
+                    <source src="/videos/Home/20123298-uhd_3840_2160_25fps.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
 
                 {/* Dark overlay */}
-                <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
 
                 {/* Centered Heading Content */}
-                <div className="flex justify-center items-center h-full relative z-10">
-                    <div className="mx-auto text-white max-w-[950px] px-4">
+                <div className="flex  items-center h-full relative z-10 max-w-[88vw] mx-auto">
+                    <div className=" text-white max-w-[70vw] mt-[62px]">
                         <motion.div
                             variants={{
                                 hidden: { opacity: 0, y: -20 },
@@ -96,32 +97,41 @@ const Hero = () => {
                             transition={{ duration: 0.8, delay: 0 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="font-semibold leading-7 lg:text-xl md:text-lg sm:text-base font-sans">We make a Difference</h2>
+                            <h2 className="font-semibold leading-7 lg:text-xl md:text-lg sm:text-base">We make a Difference</h2>
                             <h1 className="mt-3 lg:text-5xl md:text-4xl sm:text-4xl max-sm:text-4xl">
                                 <span className="text-secondary">We Don't Just Build</span>{" "}
                                 <span className="text-red-600 text-6xl">Structures</span>
                             </h1>
-                            <h2 className="mt-5 lg:text-5xl md:text-4xl sm:text-4xl max-sm:text-4xl text-secondary">
+                            <h2 className="mt-1 lg:text-5xl md:text-4xl sm:text-4xl max-sm:text-4xl text-secondary">
                                 We Build a Better <span className="text-red-600 text-6xl">Tomorrow</span>
                             </h2>
                         </motion.div>
 
                         {/* Typing animation for paragraph */}
                         <motion.p
-                            className="mt-5 font-normal leading-7 lg:text-xl md:text-lg sm:text-base max-sm:hidden"
+                            className="mt-5 font-normal leading-7 lg:text-xl md:text-lg sm:text-base max-sm:hidden text-justify"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 2 }}
                         >
-                            {Text} 
+                            {Text}
                         </motion.p>
                     </div>
                 </div>
             </div>
 
             {/* Sliding Section */}
-            <div className="bg-primary overflow-hidden top-[-82px] relative">
-                <ul className="flex gap-x-52 py-2 whitespace-nowrap animate-slide text-white">
+            <motion.div
+                            variants={{
+                                hidden: { opacity: 0, y: 0 },
+                                visible: { opacity: 1, y: 0 },
+                            }}
+                            initial="hidden"
+                            whileInView="visible"
+                            transition={{ duration: 0.8, delay: 0 }}
+                            viewport={{ once: true }}
+                         className="bg-primary overflow-hidden ">
+                <ul className="flex gap-x-52  py-2 cursor-default whitespace-nowrap animate-slide text-white text-xl ">
                     <li>Roads & Bridges</li>
                     <li>Tunnels</li>
                     <li>Transport Planning</li>
@@ -146,6 +156,7 @@ const Hero = () => {
                         animation: slide 20s linear infinite;
                     }
                 `}</style>
+            </motion.div>
             </div>
         </>
     );
