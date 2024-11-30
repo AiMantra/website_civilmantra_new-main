@@ -2,15 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-type ImageItem = {
-  image: string;
-  text: string;
-};
 
-type YearData = {
-  year: number;
-  images: ImageItem[];
-};
 
 const data = [
   {

@@ -1,83 +1,47 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 import Image from "next/image";
 
->>>>>>> af8a602d5377fbefe48c0410eb5b3d9b018c7fbc
-=======
-import Image from "next/image";
 
->>>>>>> af8a602d5377fbefe48c0410eb5b3d9b018c7fbc
+
+
 const img = [
     { image: "/images/Sectors/Herosectors/Tunnel.jpg" },
     { image: "/images/Sectors/Herosectors/Tunnel.jpg" },
     { image: "/images/Sectors/Herosectors/Tunnel.jpg" },
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 ]
 
-import Image from "next/image";
-=======
-];
->>>>>>> af8a602d5377fbefe48c0410eb5b3d9b018c7fbc
-=======
-];
->>>>>>> af8a602d5377fbefe48c0410eb5b3d9b018c7fbc
+
 
 const Urbaninfra = () => {
     return (
         <>
             <div id="Urban" className="max-w-[88vw] mx-auto">
                 <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <h1 className="unihead mb-10 mt-10">Urban Infrastructure</h1>
                 </div>
-                <div className="flex justify-center  items-center gap-x-10"> {/* Flex container */}
-                    {img.map((item, index) => (
-                        <div key={index} className="flex-shrink-0"> {/* Prevent shrinking of images */}
-=======
-=======
->>>>>>> af8a602d5377fbefe48c0410eb5b3d9b018c7fbc
-                    <h1 className="unihead text-center mb-10 mt-10">Urban Infrastructure</h1>
-                </div>
-
+                
                 {/* Responsive Flex container for images */}
                 <div className="flex flex-col md:flex-row justify-center items-center gap-y-6 md:gap-x-10">
                     {img.map((item, index) => (
                         <div key={index} className=" w-full md:w-auto">
-<<<<<<< HEAD
->>>>>>> af8a602d5377fbefe48c0410eb5b3d9b018c7fbc
-=======
->>>>>>> af8a602d5377fbefe48c0410eb5b3d9b018c7fbc
+
                             <div className="my-5">
                                 <Image
                                     src={item.image}
                                     alt=""
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                                     width={index === 1 ? 450 : 370}
                                     height={index === 1 ? 350 : 300}
                                     className="rounded-lg hover:scale-110 transition-transform duration-300 shadow-2xl shadow-gray-500"
-=======
-=======
->>>>>>> af8a602d5377fbefe48c0410eb5b3d9b018c7fbc
-                                    width={index === 1 ? 420 : 370}
-                                    height={index === 1 ? 350 : 300}
-                                    className="rounded-lg hover:scale-110 transition-transform duration-300 shadow-2xl shadow-gray-500 mx-auto
-                               " // responsive width classes
-<<<<<<< HEAD
->>>>>>> af8a602d5377fbefe48c0410eb5b3d9b018c7fbc
-=======
->>>>>>> af8a602d5377fbefe48c0410eb5b3d9b018c7fbc
+
                                 />
                             </div>
                         </div>
                     ))}
                 </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                 <div>
                     <h1 className="text-[28px] leading-[28px] my-5 font-semibold text-primary">Shaping Livable Cities
                         <span className="text-[28px] leading-[28px] mb-5 font-normal text-brown " > Urban Infrastructure Development</span>
@@ -107,9 +71,8 @@ const Urbaninfra = () => {
                     <p className="text-[18px] leading-[32px] mb-5 font-normal ">
                     We believe in harnessing the power of technology to create intelligent and efficient urban environments. We collaborate with clients to integrate smart technologies in areas like traffic management, waste collection, and energy efficiency, fostering sustainable and resilient cities.
                     </p>
-=======
-=======
->>>>>>> af8a602d5377fbefe48c0410eb5b3d9b018c7fbc
+                </div>
+
 
                 {/* Responsive text content */}
                 <div className="text-justify px-4 sm:px-4">
@@ -149,10 +112,6 @@ const Urbaninfra = () => {
                             We believe in harnessing the power of technology to create intelligent and efficient urban environments. We collaborate with clients to integrate smart technologies in areas like traffic management, waste collection, and energy efficiency, fostering sustainable and resilient cities.
                         </p>
                     </div>
-<<<<<<< HEAD
->>>>>>> af8a602d5377fbefe48c0410eb5b3d9b018c7fbc
-=======
->>>>>>> af8a602d5377fbefe48c0410eb5b3d9b018c7fbc
                 </div>
             </div>
         </>
