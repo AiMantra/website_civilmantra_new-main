@@ -20,20 +20,21 @@ const AdTestimonial = () => {
 
   const fileInputRef = useRef(null);
 
-  const handleChange = (e: { target: { name: any; value: any; type: any; files: any; }; }) => {
-    const { name, value, type, files } = e.target;
-    if (type === 'file') {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type, files } = e.target as HTMLInputElement;
+    if (type === 'file' && files) {
       setFormData({
         ...formData,
-        [name]: files[0], // Assuming only one file is uploaded
+        [name]: files[0], // Handle file input
       });
     } else {
       setFormData({
         ...formData,
-        [name]: value,
+        [name]: value, // Handle text input
       });
     }
   };
+  
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();

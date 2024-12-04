@@ -11,6 +11,7 @@ import searchicon from "../../../public/blogs/search.svg";
 import blogauthor from "../../../public/blogs/blogauthor.png";
 import editicon from "../../../public/blogs/editicon.svg";
 import deleteicon from "../../../public/blogs/deleteicon.svg";
+import Image from 'next/image';
 
 // Left and Right Arrow components for Slider
 function RightArrow(props: { className: any; style: any; onClick: any; }) {
@@ -147,11 +148,13 @@ const TestimonialPanelPost = () => {
                             className="group bg-[#FAFAFA] relative !h-[35vh] cursor-pointer w-auto border-[1px] hover:border-gray-300 border-gray-200 p-4 rounded-xl hover:bg-white shadow-[0_0_30px_0px_rgba(0,0,0,0.03)] hover:shadow-none transition-all"
                         >
                             <div className="flex items-center justify-start gap-4 min-h-[10dvh] mb-2">
-                                <img
-                  src={blogauthor}
-                  alt={post.company_Name}
-                  className="w-14 h-14 rounded-full"
-                />
+                                <Image
+                                    src={blogauthor}
+                                    alt={post.company_Name}
+                                    width={56}
+                                    height={56}
+                                    className=" w-14 h-14 rounded-full"
+                                />
                                 <div className="flex flex-col items-start justify-center gap-2">
                                     <div className="flex items-center justify-between">
                                         <h3 className="group-hover:text-[#990000] text-xl font-semibold">
