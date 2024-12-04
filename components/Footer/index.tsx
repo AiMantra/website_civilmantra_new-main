@@ -26,13 +26,13 @@ const Quicklinks = [
 ];
 
 const Services = [
-    { name: "Expressway",url: "/Sectors#roadsbridges" },
-    { name: "Tunnels",url: "/Sectors#tunnels" },
-    { name: "Urban Infrastructure",url: "/Sectors#Urban" },
-    { name: "Railway",url: "/Sectors#Railway" },
-    { name: "Bridges",url: "/Sectors#roadsbridges" },
-    { name: "Metro",url: "/Sectors#roadsbridges" },
-    { name: "Waterways",url: "/Sectors#roadsbridges" },
+    { name: "Expressway", url: "/Sectors#roadsbridges" },
+    { name: "Tunnels", url: "/Sectors#tunnels" },
+    { name: "Urban Infrastructure", url: "/Sectors#Urban" },
+    { name: "Railway", url: "/Sectors#Railway" },
+    { name: "Bridges", url: "/Sectors#roadsbridges" },
+    { name: "Metro", url: "/Sectors#roadsbridges" },
+    { name: "Waterways", url: "/Sectors#roadsbridges" },
 ];
 
 const Footer = () => {
@@ -48,7 +48,7 @@ const Footer = () => {
     return (
         <>
             <div className="bg-grays ">
-                <div className="max-w-[88vw] mx-auto py-7   flex flex-col max-lg:grid max-lg:grid-cols-2 gap-x-5 max-lg:gap-x-8 lg:flex-row lg:justify-between gap-y-8 lg:gap-y-0 ">
+                <div className="max-w-[88vw] mx-auto py-7   flex flex-col max-lg:grid max-lg:grid-cols-2 gap-x-5 max-lg:gap-x-8 max-sm:gap-x-1 lg:flex-row lg:justify-between gap-y-8 lg:gap-y-0 ">
                     {/* Logo and Address */}
                     <div className="lg:w-1/4 ">
                         <Image
@@ -149,7 +149,7 @@ const Footer = () => {
                                             alt="Email"
                                             width={30}
                                             height={40}
-                                            className="max-md:w-7 max-md:h-7 cursor-pointer transition-transform duration-300 ease-in-out group-hover:-translate-y-1 group-hover:scale-125 group-hover:filter  "
+                                            className="max-md:w-7 max-md:h-7 cursor-pointer transition-transform duration-300 ease-in-out group-hover:-translate-y-1 group-hover:scale-125 group-hover:filter shrink-0  "
                                         />
                                     </div>
 
@@ -158,9 +158,9 @@ const Footer = () => {
                                             href="https://mail.google.com/mail/?view=cm&fs=1&to=services@civilmantra.com"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="max-w-full"
+                                            className=" text-[14px] sm:text-[18px] md:text-lg lg:text-lg"
                                         >
-                                            services@<br className="md:hidden" />civilmantra.com
+                                            services@civilmantra.com
                                         </a>
                                     </li>
 
@@ -172,11 +172,12 @@ const Footer = () => {
                                         alt="Phone"
                                         width={30}
                                         height={20}
-                                        className="max-md:w-7 max-md:h-7 cursor-pointer group-hover:-translate-y-1 group-hover:scale-125 transition-transform duration-300 ease-in-out"
+                                        className="max-md:w-7 max-md:h-7 cursor-pointer group-hover:-translate-y-1 group-hover:scale-125 transition-transform duration-300 ease-in-out max-sm:w-[25px]"
                                     />
-                                    <li className="hover:text-gray-100 text-gray-800 group-hover:text-primary text-lg">
+                                    <li className="hover:text-gray-100 text-gray-800 group-hover:text-primary text-[14px] sm:text-[18px] md:text-lg lg:text-lg">
                                         <a href="tel:+918120444777">+91 81204 - 44777</a>
                                     </li>
+
                                 </div>
                             </ul>
                         </motion.div>
@@ -189,7 +190,7 @@ const Footer = () => {
                             whileInView="visible"
                             transition={{ duration: 1, delay: 0 }}
                             viewport={{ once: true }}>
-                            <div className="flex gap-x-5 max-sm:gap-x-0 max-sm:grid grid-cols-2 md:mt-5 ">
+                            <div className="flex gap-x-5 max-md:mt-5 max-sm:gap-x-0 max-sm:grid grid-cols-2 md:mt-5 ">
                                 {Socialmedia.map((social, index) => (
                                     <div key={index}>
                                         <a href={social.link} target="_blank" rel="noopener noreferrer">
