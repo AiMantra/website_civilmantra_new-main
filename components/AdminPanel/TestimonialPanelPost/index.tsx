@@ -93,7 +93,7 @@ const TestimonialPanelPost = () => {
     const handleDelete = async (postId: number) => {
         // Handle delete API call
         try {
-            await fetch(`https://cipl.aimantra.info/website/testimonialsList/${postId}`, {
+            await fetch(`https://cipl.aimantra.info/website/testimonialsList/`, {
                 method: 'GET',
             });
             setTestimonialsPosts((prevPosts) =>

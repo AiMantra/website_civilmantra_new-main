@@ -78,7 +78,7 @@ const AdTestimonial = () => {
 
   return (
     <>
-      <div className="flex justify-start items-center h-auto py-12 pb-20 bg-[#f0f5fa] px-56">
+      <div className="flex justify-start mt-20 items-center h-auto py-12 pb-20 bg-[#f0f5fa] px-56">
         <ToastContainer />
         <div className="bg-white p-8 rounded-lg shadow-lg w-full py-10 px-14">
           <h1 className="text-3xl font-bold mb-4">
