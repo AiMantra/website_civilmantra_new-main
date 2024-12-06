@@ -27,22 +27,21 @@ const Panels = () => {
 
   // Define the panels array
   const panels = [
-    { panel: "Achievements Panel", url: "/" },
-    { panel: "Clients Panel", url: "/" },
-    { panel: "Innovation Panel", url: "/" },
-    { panel: "Members Panel", url: "/" },
-    { panel: "Sectors Panel", url: "/" },
+    { panel: "Achievements Panel", url: "/AchievementPanel" },
+    { panel: "Clients Panel", url: "/Clients" },
+    { panel: "Innovation Panel", url: "/InovationPanel" },
+    { panel: "Members Panel", url: "/Members" },
     { panel: "Testimonial Panel", url: "/AdminTestimonial" },
     {
       panel: "Projects Panel",
       url: "#",
       isDropdown: true, 
       subPanels: [
-        { panel: "Key Projects Panel", url: "/" },
-        { panel: "Highlighted Projects Panel", url: "/" },
-        { panel: "Design Highlighted Projects Panel", url: "/" },
-        { panel: "DPR Projects Panel", url: "/DprProjects" },
-        { panel: "Completed Projects Panel", url: "/" },
+        { panel: "Key Projects Panel", url: "/KeyProjectsPanel" },
+        { panel: "Highlighted Projects Panel", url: "/HighlightedPanel" },
+        { panel: "Design Highlighted Projects Panel", url: "/DesignPanel" },
+        { panel: "Ongoing Projects Panel", url: "/OngoingPanel" },
+        { panel: "Completed Projects Panel", url: "/CompletedPanel" },
       ],
     },
   ];

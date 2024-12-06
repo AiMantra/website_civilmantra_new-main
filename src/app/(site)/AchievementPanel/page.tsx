@@ -2,20 +2,28 @@
 
 import React, { useState } from "react";
 
-const AdTestimonial = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    company_Name: "",
-    position: "",
-    reviews: "",
+const AchievePanel = () => {
+  const [formData, setFormData] = useState({ 
+    year: "",
+    description: "",    
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const [file, setFile] = useState<File | null>(null);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
     });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setFile(e.target.files[0]);
+    }
   };
 
   return (
@@ -24,71 +32,54 @@ const AdTestimonial = () => {
         <h1 className="text-3xl font-bold mb-4">
           Submit a New <span className="text-[#990000]">Testimonial</span>
         </h1>
-        <p className="text-gray-600 mb-8">Fill out the form below to submit a new testimonial.</p>
+        <p className="text-gray-600 mb-8">
+          Fill out the form below to submit a new testimonial.
+        </p>
 
         <form>
           <div className="flex flex-col sm:flex-row gap-6 mb-6">
             <div className="flex-1">
-              <label className="block font-medium text-gray-700 mb-2">Client Name</label>
+              <label className="block font-medium text-gray-700 mb-2">
+                Year
+              </label>
               <input
-                type="text"
+                type="number"
                 className="block w-full border border-gray-300 rounded-lg p-2 px-3 outline-none focus:ring-2 focus:ring-[#333333]"
-                placeholder="Enter client's name"
-                name="name"
-                value={formData.name}
+                placeholder="Enter Year"
+                name="year"
+                value={formData.year}
                 onChange={handleChange}
                 required
               />
             </div>
 
             <div className="flex-1">
-              <label className="block font-medium text-gray-700 mb-2">Company Name</label>
+              <label className="block font-medium text-gray-700 mb-2">
+                Company Name
+              </label>
               <input
                 type="text"
                 className="block w-full border border-gray-300 rounded-lg p-2 px-3 outline-none focus:ring-2 focus:ring-[#333333]"
                 placeholder="Enter the company name"
-                name="company_Name"
-                value={formData.company_Name}
+                name="description"
+                value={formData.description}
                 onChange={handleChange}
                 required
               />
             </div>
           </div>
 
-          <div className="mb-6">
-            <label className="block font-medium text-gray-700 mb-2">Client's Position</label>
-            <input
-              type="text"
-              className="block w-full border border-gray-300 rounded-lg p-2 px-3 outline-none focus:ring-2 focus:ring-[#333333]"
-              placeholder="Enter the client's position"
-              name="position"
-              value={formData.position}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="mb-6">
-            <label className="block font-medium text-gray-700 mb-2">Testimonial Review</label>
-            <textarea
-              className="block w-full border border-gray-300 rounded-lg p-2 px-3 outline-none focus:ring-2 focus:ring-[#333333]"
-              placeholder="Write your testimonial here"
-              name="review"
-              value={formData.reviews}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
           <div className="">
-            <label className="block font-medium text-gray-700 mb-2">Company Logo</label>
+            <label className="block font-medium text-gray-700 mb-2">
+              Company Logo
+            </label>
             <div className="relative">
               <input
                 type="file"
                 accept="image/*"
                 id="file-upload"
                 className="hidden"
-                required
+                onChange={handleFileChange}
               />
               <label
                 htmlFor="file-upload"
@@ -102,13 +93,10 @@ const AdTestimonial = () => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M21 15V16.2C21 17.8802 21 18.7202 20.673 19.362C20.3854 19.9265 19.9265 20.3854 19.362 20.673C18.7202 21 17.8802 21 16.2 21H7.8C6.11984 21 5.27976 21 4.63803 20.673C4.07354 20.3854 3.6146 19.9265 3.32698 19.362C3 18.7202 3 17.8802 3 16.2V15M17 8L12 3M12 3L7 8M12 3V15"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                    d="M21 15V16.2C21 17.8802 21 18.7202 20.673 19.362C20.3854 19.9265 19.9265 20.3854 19.362 20.673C18.7202 21 17.8802 21 16.2 21H7.8C6.11984 21 5.27976 21 4.63803 20.673C4.07354 20.3854 3.6146 19.9265 3.32698 19.362C3 18.7202 3 17.8802 3 16.2V15M17 8L12 3M12 3L7 8M12 3V15"stroke="currentColor"strokeWidth="2"strokeLinecap="round"strokeLinejoin="round"
                   />
                 </svg>
+                Choose Image
               </label>
             </div>
           </div>
@@ -127,4 +115,4 @@ const AdTestimonial = () => {
   );
 };
 
-export default AdTestimonial;
+export default AchievePanel;

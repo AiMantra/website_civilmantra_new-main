@@ -14,8 +14,8 @@ export default function Projects() {
         <>
 
           <Heroprojects/>
-          {/* <HighlightedDesign/> */}
-          {/* <ProjectDetails/> */}
+          <HighlightedDesign/>
+          <ProjectDetails/>
           <Projectpdf/>
         </>
     );
