@@ -30,10 +30,10 @@ const AchievePanel = () => {
     <div className="flex justify-start mt-20 items-center h-auto py-12 pb-20 bg-[#f0f5fa] px-56">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full py-10 px-14">
         <h1 className="text-3xl font-bold mb-4">
-          Submit a New <span className="text-[#990000]">Testimonial</span>
+          Submit a New <span className="text-[#990000]">Achievements</span>
         </h1>
         <p className="text-gray-600 mb-8">
-          Fill out the form below to submit a new testimonial.
+          Fill out the form below to submit a new Achievements.
         </p>
 
         <form>

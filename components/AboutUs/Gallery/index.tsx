@@ -226,7 +226,7 @@ const Gallery = () => {
         ))}
       </motion.div>
 
-      {/* <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait">
         <motion.div
           key={selectedYear}
           initial={{ opacity: 0, y: -20 }}
@@ -259,47 +259,8 @@ const Gallery = () => {
             </motion.div>
           ))}
         </motion.div>
-      </AnimatePresence> */}
-      <AnimatePresence mode="wait">
-  <motion.div
-    key={selectedYear}
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -20 }}
-    transition={{ duration: 0.5 }}
-    className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
-  >
-    {currentYearData?.images.map((item, index) => (
-      <motion.div
-        key={index}
-        className={`relative overflow-hidden shadow-lg rounded-lg hover:scale-105 transition-transform duration-300 ease-in-out ${
-          index % 5 === 0
-            ? "row-span-2 col-span-2"
-            : index % 3 === 0
-            ? "row-span-1 col-span-2"
-            : "row-span-1 col-span-1"
-        }`}
-        onClick={() => openModal(item.image)}
-      >
-        <Image
-          src={item.image}
-          alt={`Gallery Image ${index + 1}`}
-          width={500}
-          height={300}
-          style={{ objectFit: "cover" }}
-          className="rounded-lg w-full h-full"
-        />
-
-        {/* Text overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-end transition-all duration-300 opacity-0 hover:opacity-100 rounded-lg">
-          <div className="p-2 text-white text-sm sm:text-base font-semibold bg-black bg-opacity-70 w-full text-center">
-            {item.text}
-          </div>
-        </div>
-      </motion.div>
-    ))}
-  </motion.div>
-</AnimatePresence>
+      </AnimatePresence>
+      
 
 
       {/* Fullscreen Modal */}

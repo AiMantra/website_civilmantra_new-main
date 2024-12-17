@@ -1,14 +1,14 @@
 import React from "react";
 
 interface DeleteModalProps {
-  posttype: string;
-  isOpen: boolean;
-  onClose: () => void;
-  onConfirm: () => void;
+  posttype: string; // Type of the item being deleted (e.g., "Client", "Document")
+  isOpen: boolean; // Controls modal visibility
+  onClose: () => void; // Function to close the modal
+  onConfirm: () => void; // Function to handle delete action
 }
 
 const DeleteModal: React.FC<DeleteModalProps> = ({ posttype, isOpen, onClose, onConfirm }) => {
-  if (!isOpen) return null;
+  if (!isOpen) return null; // If modal is not open, return null
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -35,8 +35,7 @@ const DeleteModal: React.FC<DeleteModalProps> = ({ posttype, isOpen, onClose, on
               Delete {posttype}?
             </h3>
             <p className="mt-2 text-sm text-gray-500">
-              Are you sure you want to delete? This action cannot
-              be undone.
+              Are you sure you want to delete? This action cannot be undone.
             </p>
           </div>
         </div>

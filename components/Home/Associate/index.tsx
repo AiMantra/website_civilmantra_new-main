@@ -1,30 +1,37 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
-const images = [
-  { image: "/images/Home/Associates/Adani_2012.png" },
-  { image: "/images/Home/Associates/ARCONS.png" },
-  { image: "/images/Home/Associates/Border_Roads_Organisation.png" },
-  { image: "/images/Home/Associates/CDS.png" },
-  { image: "/images/Home/Associates/GHV.png" },
-  { image: "/images/Home/Associates/GMDA.png" },
-  { image: "/images/Home/Associates/MCG.png" },
-  { image: "/images/Home/Associates/MPRDC.jpg" },
-  { image: "/images/Home/Associates/NHAI-Black.png" },
-  { image: "/images/Home/Associates/Sadbhav_Engineering.png" },
-];
+
+interface ImageData {
+  imglogo: string;
+}
 
 const Associate = () => {
-  const [scrollSpeed, setScrollSpeed] = useState(20); // Default speed
+  const [images, setImages] = useState<ImageData[]>([]); 
+  const [scrollSpeed, setScrollSpeed] = useState(20); 
 
+ 
   useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        
+        const response = await axios.get("https://cipl.aimantra.info/website/clientLogo/");
+        setImages(response.data); 
+      } catch (error) {
+        console.error("Error fetching images:", error);
+      }
+    };
+
+    fetchImages(); // Call the fetch function when the component mounts
+
     // Update scroll speed based on screen size
     const updateScrollSpeed = () => {
-      if (window.innerWidth <= 768) { // max-md breakpoint for small screens
+      if (window.innerWidth <= 768) {
         setScrollSpeed(15); // Increase speed for smaller screens
-      } else if (window.innerWidth <= 1024) { // max-lg breakpoint
-        setScrollSpeed(18); 
+      } else if (window.innerWidth <= 1024) {
+        setScrollSpeed(18); // Medium speed for mid-sized screens
       } else {
         setScrollSpeed(20); // Normal speed for larger screens
       }
@@ -55,7 +62,7 @@ const Associate = () => {
             className="flex-shrink-0 bg-white rounded-3xl my-8 md:my-16 w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] flex items-center justify-center"
           >
             <Image
-              src={item.image}
+              src={item.imglogo}
               alt="Associate logo"
               width={200}
               height={200}

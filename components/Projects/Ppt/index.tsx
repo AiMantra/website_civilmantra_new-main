@@ -3,7 +3,7 @@ import * as XLSX from 'xlsx';
 
 const Projectpdf = () => {
   const [excelDataDPR, setExcelDataDPR] = useState<any[]>([]); // Data for DPR projects
-  // const [excelDataCompleted, setExcelDataCompleted] = useState<any[]>([]); // Data for Completed projects
+  const [excelDataCompleted, setExcelDataCompleted] = useState<any[]>([]); // Data for Completed projects
   const [activeSection, setActiveSection] = useState<string>('DPR'); // Default section is 'DPR'
 
   // Function to fetch and process Excel data
@@ -20,7 +20,7 @@ const Projectpdf = () => {
   // Load data for both files on component mount
   useEffect(() => {
     fetchExcelFile('/Excel/Ongoing Project List CIPL.xlsx', setExcelDataDPR); // DPR Projects
-    // fetchExcelFile('/Excel/Ongoing Project List CIPL.xlsx', setExcelDataCompleted); // Completed Projects
+    fetchExcelFile('/Excel/Ongoing Project List CIPL.xlsx', setExcelDataCompleted); // Completed Projects
   }, []);
 
 
@@ -56,14 +56,14 @@ const Projectpdf = () => {
     <div className="px-4 md:px-16 max-w-[88vw] mx-auto mb-10">
       {/* Buttons for sections */}
       <div className="mb-4 space-x-4">
-        {/* <button
+        <button
           onClick={() => setActiveSection('Completed')}
           className={`px-4 py-2 rounded transition duration-300 ease-in-out ${
             activeSection === 'Completed' ? 'bg-blue-700 scale-110 -translate-y-1 text-white' : 'bg-blue-500 text-white hover:bg-blue-700'
           }`}
         >
           Completed Projects
-        </button> */}
+        </button>
         <button
           onClick={() => setActiveSection('DPR')}
           className={`px-4 py-2 mt-10 rounded transition duration-300 ease-in-out ${
@@ -82,12 +82,12 @@ const Projectpdf = () => {
             {renderTable(excelDataDPR)}
           </>
         )}
-        {/* {activeSection === 'Completed' && (
+        {activeSection === 'Completed' && (
           <>
             <h2 className="text-5xl font-bold my-10 text-center">Completed Projects</h2>
             {renderTable(excelDataCompleted)}
           </>
-        )} */}
+        )}
       </div>
     </div>
   );

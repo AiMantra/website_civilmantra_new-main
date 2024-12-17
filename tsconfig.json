@@ -17,10 +17,18 @@
         "name": "next"
       }
     ],
+    "typeRoots": ["node_modules/@types"],  
+    "types": ["react", "react-dom"], 
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/(site)/BlogAdminPanel", ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/(site)/BlogAdminPanel"
+  ],
   "exclude": ["node_modules"]
 }

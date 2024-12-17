@@ -147,7 +147,7 @@ const Clients = () => {
                             <img
                                 src={client.img}
                                 alt={client.name}
-                                className={`h-16 md:h-20 ${[2, 3, 1].includes(index) ? "w-[150px]" : "w-16 md:w-20"}`}
+                                className={`h-16 md:h-20 w-auto `}
                             />
 
                             <h3 className="text-lg md:text-xl font-bold my-2">{client.name}</h3>
