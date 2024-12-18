@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const info = [
     {
-        img: "/images/Home/clients/dmr.png",
+        img: "/images/Home/clients/rkc.png",
         name: "DMR Builders Pvt. Ltd.",
         review: "Amazing service! Couldn't ask for better.",
         rating: 5
@@ -18,25 +18,25 @@ const info = [
         rating: 4
     },
     {
-        img: "/images/Home/clients/gawar.png",
+        img: "/images/Home/clients/rkc.png",
         name: "Gawar Constructions Limited",
         review: "Highly recommend their services for any construction needs!",
         rating: 5
     },
     {
-        img: "/images/Home/clients/bharat.png",
+        img: "/images/Home/clients/rkc.png",
         name: "Bharat Constructions",
         review: "Highly recommend their services for any construction needs!",
         rating: 5
     },
     {
-        img: "/images/Home/clients/monte.png",
+        img: "/images/Home/clients/rkc.png",
         name: "MonteCarlo",
         review: "Highly recommend their services for any construction needs!",
         rating: 5
     },
     {
-        img: "/images/Home/clients/grtc.png",
+        img: "/images/Home/clients/rkc.png",
         name: "GRTC (Gour Road Tar Coat Pvt. Ltd.)",
         review: "Highly recommend their services for any construction needs!",
         rating: 5
